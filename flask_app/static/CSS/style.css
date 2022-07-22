@@ -12,8 +12,8 @@
         padding: 10px;
     }
 
-    a:hover {
-        background-color: red;
+    #top_head a:hover {
+        color: red;
     }
     #top_head {
         display: flex;
@@ -45,6 +45,10 @@
         text-decoration: none;
         font-size: 1.5rem;
         margin: 10px;
+    }
+
+    #nav a:hover {
+        color: red;
     }
 
     #nav {
