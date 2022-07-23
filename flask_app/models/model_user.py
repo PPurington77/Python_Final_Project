@@ -5,8 +5,9 @@ from flask_app import bcrypt
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 PASSWORD_REGEX = re.compile(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$')
+CONFIRM_PASSWORD_REGEX = re.compile(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$')
 
-DATABASE = 'KeystoneMMA_db'
+DATABASE = 'keystonemma_db'  
 
 class User:
     def __init__(self, data):
@@ -14,13 +15,10 @@ class User:
         self.first_name = data['first_name']
         self.last_name = data['last_name']
         self.email = data['email']
-        self.phone_number = data['phone_number']
+        self.px = data['px']
         self.password = data['password']
-        self.total_number_of_members = data['total_number_of_members']
-        self.paid = data['paid']
         self.created_at = data['created_at']
-        self.updated_at = data['updated_at']
-        # self.employee_id = data['employee_id'] #ask later about this. employees aren't creating the members but want to be able to edit them.
+        self.updated_at = data['updated_at'] 
 
 
     @classmethod
@@ -34,7 +32,7 @@ class User:
 
     @classmethod
     def create(cls, data):
-        query = "INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s, NOW(), NOW() );"
+        query = "INSERT INTO users (first_name, last_name, px, email, password, created_at, updated_at) VALUES (%(first_name)s, %(last_name)s, %(px)s, %(email)s, %(password)s, NOW(), NOW() );"
         
         return connectToMySQL(DATABASE).query_db(query, data)
 
@@ -54,7 +52,7 @@ class User:
         return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
-    def destroy(cls, data):
+    def delete(cls, data):
         query = "DELETE FROM users WHERE id = %(id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
 
@@ -67,6 +65,7 @@ class User:
             user = cls(result[0])
             return user
         print('user doesnt exist')
+
         return False
 
     @staticmethod
@@ -93,6 +92,10 @@ class User:
             print('last lett')
             is_valid = False
 
+        if len(data['px']) < 9:
+            flash('Phone number must have atleast 9 numbers', 'err_user_px')
+            is_valid = False
+
         if not EMAIL_REGEX.match(data['email']):
             flash('Email address is not valid', 'err_user_email')
             print('email')
@@ -110,23 +113,3 @@ class User:
             is_valid = False
 
         return is_valid
-
-    # @staticmethod
-    # def validate_login(data):
-    #     is_valid = True
-    #     potential_user = User.get_one_login({'email': data['email']})
-    #     print(potential_user)
-
-    #     if not EMAIL_REGEX.match(data['email']):
-    #         flash('Credentials invalid!', 'err_user_email_login')
-    #         print('no email in db')
-    #         is_valid = False
-            
-    #     if not bcrypt.check_password_hash(potential_user.password, data['password']):
-    #         flash("Incorrect Password", 'err_user_password_login')
-    #         print('no password in db')
-    #         is_valid = False
-
-    #     print(is_valid)
-    #     return is_valid
-    #validate login in controller !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#

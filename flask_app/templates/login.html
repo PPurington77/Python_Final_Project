@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keystone MMA</title>
+    <link rel="stylesheet" type="text/css" href="/static/CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="/flask_app/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/flask_app/static/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="header">
+        <div id="top_head">
+            <img src="/static/images/logo.png" alt="logo">
+            <h1>Keystone Martial Arts Academy</h1>
+        </div>
+        <div id="nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/classes">Classes/Schedule</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+    <div id="belt">
+        <div id="beg_belt"></div>
+        <div id="mid_belt"></div>
+        <div id="end_belt"></div>
+    </div>
+    <p id="login_mid_p">**Warning! Loggin in will take you to a member's only area of the website. All registered user's are reviewed by administration, and if found not to be a member of the gym your account will be deleted. You must log out to access the rest of the website**</p>
+    <div id="login_mid">
+            <div class="box">
+                <h1 class="h1_log">Register</h1>
+                <form action="/register" method="post">
+                    <div class="lables">
+                        <label for="first_name">First Name:</label>
+                        <input type="text" name="first_name" placeholder="Type your first name here!">
+                        {% for message in get_flashed_messages(category_filter=["err_user_first_name"]) %}
+                        <p class="alert_alert-danger">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="lables">
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" name="last_name" placeholder="Type your last name here!">
+                        {% for message in get_flashed_messages(category_filter=["err_user_last_name"]) %}
+                        <p class="alert_alert-danger">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="lables">
+                        <label for="px">Phone Number:</label>
+                        <input type="text" name="px" placeholder="Type your phone number here!">
+                        {% for message in get_flashed_messages(category_filter=["err_user_px"]) %}
+                        <p class="alert_alert-danger">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="lables">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" placeholder="Type your email here!">
+                        {% for message in get_flashed_messages(category_filter=["err_user_email"]) %}
+                        <p class="alert_alert-danger">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="lables">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" placeholder="Type your password here">
+                        {% for message in get_flashed_messages(category_filter=["err_password"]) %}
+                        <p class="alert_alert-danger">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="lables">
+                        <label for="confirm_password">Confirm Password:</label>
+                        <input type="password" name="confirm_password" id="confirm_password" placeholder="Retype your password here!">
+                        {% for message in get_flashed_messages(category_filter=["err_user_password"]) %}
+                        <p class="alert_alert-danger">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    <input id="buttonLeft" type="submit" value="Register">
+                </form>
+            </div>
+            <div class="box">
+                <h1 class="h1_log">Login</h1>
+                <form action="/login_user" method="post">
+                    <div class="lables">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" placeholder="Type your email here">
+                        {% for message in get_flashed_messages(category_filter=["err_login_email"]) %}
+                        <p class="alert_alert-danger">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="lables">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" placeholder="Type your password here">
+                        {% for message in get_flashed_messages(category_filter=["err_login_password"]) %}
+                        <p class="alert_alert-danger">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    <input id="buttonRight" type="submit" value="Login">
+                </form>
+            </div>
+    </div>
+    <div id="belt">
+        <div id="beg_belt"></div>
+        <div id="mid_belt"></div>
+        <div id="end_belt"></div>
+    </div>
+    <div id="footer">
+        <div id="left_foot">
+            <p>Keystone MMA</p>
+        </div>
+        <div id="right_foot">
+            <a href="https://www.facebook.com/STTPMMA"><img src="/static/images/facebookicon.png" alt="facebook icon"></a>
+            <a href="mailto:santiagosttpmma@yahoo.com"><img src="/static/images/email.png" alt="email icon"></a>
+        </div>
+    </div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="4hL1S62c"></script>
+</body>
+</html>

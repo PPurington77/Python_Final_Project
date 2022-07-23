@@ -5,10 +5,10 @@
     font-family: 'Roboto', sans-serif;
 
 }
-
+/* For home page-------------------------------------------------- */
 @media only screen and (min-width: 1024px) {
         #header {
-        background-color: #222222;
+        background-color: #5e5e5e;
         padding: 10px;
     }
 
@@ -56,7 +56,8 @@
     }
     #belt {
         display: flex;
-        border-top: 1px solid white;
+        border-top: 1px solid #FCDB04;
+        border-bottom: 1px solid #FCDB04;
     }
     #beg_belt {
         height: 20px;
@@ -103,10 +104,14 @@
         text-align: center;
     }
 
+    #right_box img {
+        width: 70%;
+    }
+
     #footer {
         display: flex;
-        background-color: #222222;
-        align-items: center;
+        background-color: #5e5e5e;
+        align-items:center;
         gap: 20px;
         padding: 20px;
     }
@@ -116,7 +121,205 @@
         text-align: right;
         color: white;
     }
+    
+    #right_foot {
+        flex: 1;
+    }
+
     #right_foot img {
         width: 10%;
+        height: 70px;
+    }
+    /* home page complete...now adding secondary pages */
+    /* about page...using most of the same minus the middle parts */
+
+    #about_middle {
+        padding: 20px;
+        display: flex;
+        height: 700px;
+        margin: 10px 0px;
+    }
+
+    #about_left_middle {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    #about_left_middle img {
+        border-radius: 50%;
+        height: 40%;
+        width: 40%;
+        box-shadow: 0px 0px 10px red;
+        flex: 1;
+        outline: 2px solid white;
+    }
+
+    #about_p {
+        flex: 2;
+        padding: 20px; 
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    #about_right_middle {
+        flex: 1;
+
+    }
+
+    .pics {
+        display: flex;
+        height: 50%;
+        margin: 10px 0px;
+        
+    }
+
+    .pics img {
+        height: 100%;
+        width: 50%;
+        margin: 0px 5px;
+    }
+
+    /*about page done----------------------------below is classes/schedule */
+
+    #classes_top {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .class_box {
+        background-color: #FCDB04;
+        padding: 10px;
+        margin: 50px 0px ;
+        border: 2px solid black;
+        text-align: center;
+        font-size: 1.5rem;
+        box-shadow: 0px 0px 10px black;
+    }
+
+    #schedule {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0px 10px;
+    }
+
+    .day {
+        background-color: #FCDB04;
+        padding: 10px;
+        margin: 20px;
+        border:2px solid black;
+        text-align: center;
+        font-size: 1.5rem;
+        box-shadow: 0px 0px 10px black;
+    }
+
+    #pricing {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    #prices {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .fees {
+        background-color: #FCDB04;
+        padding: 10px;
+        margin: 20px;
+        border:2px solid black;
+        text-align: center;
+        font-size: 1.5rem;
+        box-shadow: 0px 0px 10px black;
+    }
+
+    /* class/schedule is done...............below is contact*/
+
+    #contacts {
+        margin: 100px 50px;
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.5rem;
+    }
+
+    #con_box {
+        background-color: #FCDB04;
+        padding: 20px;
+        outline: 2px solid black;
+        box-shadow: 0px 0px 10px black;
+        line-height: 3rem;
+    }
+
+    #soc_box {
+        background-color: #FCDB04;
+        padding: 20px;
+        text-align: center;
+        outline: 2px solid black;
+        box-shadow: 0px 0px 10px black;
+    }
+    /* below is login page-------------------------------*/
+
+    #login_mid {
+        display: flex;
+        justify-content: space-around;
+        margin: 50px;
+    }
+
+    #login_mid_p {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .box {
+        margin: 10px 0px;
+        background-color: #FCDB04;
+        padding: 20px 15px;
+        color: black;
+        outline: 2px solid black;
+        box-shadow: 0px 0px 10px black;
+        width: 400px;
+    }
+
+    .h1_log {
+        margin-bottom: 10px;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        height: 30px;
+        margin: 5px 0px 20px;
+    }
+
+    #buttonLeft {
+        width: 25%;
+        background-color: red;
+        color: white;
+        font-size: 1.3rem;
+        box-shadow: 0px 0px 10px black;
+    }
+
+    #buttonRight {
+        width: 25%;
+        background-color: red;
+        color: white;
+        font-size: 1.1rem;
+        box-shadow: 0px 0px 10px black;
+    }
+
+    #buttonLeft:hover {
+        background-color: white;
+        color: black;
+    }
+
+    #buttonRight:hover {
+        background-color: white;
+        color: black;
     }
 }
+
+

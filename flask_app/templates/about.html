@@ -20,11 +20,7 @@
             <img src="/static/images/logo.png" alt="logo">
             <h1>Keystone Martial Arts Academy</h1>
             <div id="head_a">
-                {% if user in session %}
-                    <a href="/dashboard">My Account</a>
-                {% else %}
-                    <a href="/login">Login</a>
-                {% endif %}
+                <a href="/login">Login</a>
             </div>
         </div>
         <div id="nav">
@@ -39,21 +35,25 @@
         <div id="mid_belt"></div>
         <div id="end_belt"></div>
     </div>
-    <div id="middle_box">
-        <div id="left_box">
-            <h2>Keystone Martial Arts Academy</h2>
-            <h3>Carlson Gracie Jiu-Jitsu Team</h3>
-            <h3>Keystone Heights, FL</h3>
-            <p><strong>Family - Honor - Respect</strong></p>
-            <p><em>Professor Elpidio Santiago</em></p>
-            <img src="/static/images/Groupphoto.jpg" alt="Group Photo">
-            <p>Come join our team!</p>
+    <div id="about_middle">
+        <div id="about_left_middle">
+            <img src="/static/images/prof.jpg" alt="prof">
+            <div id="about_p">
+                <p>For over 35 years Keystone MMA has been serving Keystone Heights and its surrounding area. Being one of the only gyms in the area, and the only gym to train both BJJ and MMA Keystone MMA offers a great training environment for any person interested in martial arts.</p>
+                <p>Keystone MMA is led by Master Elpidio Santiago, who throughout his years of training has earned a 5th degree black belt in Hapkido, a 7th degree blackbelt in Tang Soo Do, and a 2nd degree blackbelt in Brazilian Jui Jitsu.</p>
+            </div>
         </div>
-        <div id="right_box">
-            <img src="/static/images/bulldogs.png" alt="bulldogs">
-            <p>Check out our Facebook for class updates</p>
-            <div class="fb-page" data-href="https://www.facebook.com/STTPMMA" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/STTPMMA" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/STTPMMA">Keystone Martial Arts Academy  - Carlson Gracie Keystone / STTP MMA</a></blockquote></div>
+        <div id="about_right_middle">
+            <div class="pics">
+                <img src="static/images/about_img/about3.jpg" alt="class photos">
+                <img src="static/images/about_img/about4.jpg" alt="class photos">
+            </div>
+            <div class="pics">
+                <img src="static/images/about_img/about5.jpg" alt="class photos">
+                <img src="static/images/about_img/kids.jpg" alt="class photos">
+            </div>
         </div>
+    </div>
     </div>
     <div id="belt">
         <div id="beg_belt"></div>

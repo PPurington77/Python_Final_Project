@@ -18,13 +18,9 @@
     <div id="header">
         <div id="top_head">
             <img src="/static/images/logo.png" alt="logo">
-            <h1>Keystone Martial Arts Academy</h1>
+            <h1>Welcome, {{ user.first_name }}</h1>
             <div id="head_a">
-                {% if user in session %}
-                    <a href="/dashboard">My Account</a>
-                {% else %}
-                    <a href="/login">Login</a>
-                {% endif %}
+                <a href="/logout">Logout</a>
             </div>
         </div>
         <div id="nav">
@@ -38,22 +34,6 @@
         <div id="beg_belt"></div>
         <div id="mid_belt"></div>
         <div id="end_belt"></div>
-    </div>
-    <div id="middle_box">
-        <div id="left_box">
-            <h2>Keystone Martial Arts Academy</h2>
-            <h3>Carlson Gracie Jiu-Jitsu Team</h3>
-            <h3>Keystone Heights, FL</h3>
-            <p><strong>Family - Honor - Respect</strong></p>
-            <p><em>Professor Elpidio Santiago</em></p>
-            <img src="/static/images/Groupphoto.jpg" alt="Group Photo">
-            <p>Come join our team!</p>
-        </div>
-        <div id="right_box">
-            <img src="/static/images/bulldogs.png" alt="bulldogs">
-            <p>Check out our Facebook for class updates</p>
-            <div class="fb-page" data-href="https://www.facebook.com/STTPMMA" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/STTPMMA" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/STTPMMA">Keystone Martial Arts Academy  - Carlson Gracie Keystone / STTP MMA</a></blockquote></div>
-        </div>
     </div>
     <div id="belt">
         <div id="beg_belt"></div>
