@@ -91,6 +91,7 @@
         flex: 1;
         padding: 30px;
     }
+
     #left_box img {
         width: 100%;
         margin: 10px 0px;
@@ -317,6 +318,110 @@
     }
 
     #buttonRight:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .alert_alert-danger {
+        background-color: red;
+        color: white;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    /* below is dashboard-------------------------------------*/
+    #dashboard_container{
+        width: 80%;
+        margin: 50px auto;
+        display: flex;
+        justify-content: space-around;
+    }
+    #dashboard_h2 {
+    text-align: center;
+    margin: 40px 0px 20px; 
+    }
+
+    #table_button {
+        margin: 0px auto 50px;
+        width: 60%;
+    }
+
+    #table_button button {
+        text-decoration: none;
+        width: 20%;
+        background-color: red;
+        color: white;
+        font-size: 1.3rem;
+        box-shadow: 0px 0px 10px black;
+        margin-top: 20px;
+    }
+
+    #table_button button:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .right_buttons button {
+        text-decoration: none;
+        width: 100%;
+        background-color: red;
+        color: white;
+        font-size: 1.3rem;
+        box-shadow: 0px 0px 10px black;
+        margin-top: 20px;
+        padding:5px;
+    }
+
+    .right_buttons button:hover {
+        background-color: white;
+        color: black;
+    }
+
+    /*below is update**************************/
+    #updateBox {
+        margin: 20px auto;
+        width: 500px;
+        background-color: #FCDB04;
+        outline: 2px solid black;
+        box-shadow: 0px 0px 10px black;
+        padding: 20px;
+    }
+
+    #updateBox input{
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 0px 5px;
+    }
+
+    #updateBox label {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    #updateButton {
+        width: 25%;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    /* below is view techniques....................................*/
+
+    #tech_container {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    #tech_container button{
+        width: 20%;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    #tech_container button:hover {
         background-color: white;
         color: black;
     }

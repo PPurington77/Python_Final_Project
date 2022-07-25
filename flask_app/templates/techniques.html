@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keystone MMA</title>
+    <!-- CSS only -->
     <link rel="stylesheet" type="text/css" href="/static/CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -18,9 +20,9 @@
     <div id="header">
         <div id="top_head">
             <img src="/static/images/logo.png" alt="logo">
-            <h1>Keystone Martial Arts Academy</h1>
+            <h1>Keystone MMA</h1>
             <div id="head_a">
-                <a href="/login">My Account</a>
+                <a href="/dashboard">My Account</a>
             </div>
         </div>
         <div id="nav">
@@ -35,25 +37,31 @@
         <div id="mid_belt"></div>
         <div id="end_belt"></div>
     </div>
-    <div id="about_middle">
-        <div id="about_left_middle">
-            <img src="/static/images/prof.jpg" alt="prof">
-            <div id="about_p">
-                <p>For over 35 years Keystone MMA has been serving Keystone Heights and its surrounding area. Being one of the only gyms in the area, and the only gym to train both BJJ and MMA Keystone MMA offers a great training environment for any person interested in martial arts.</p>
-                <p>Keystone MMA is led by Master Elpidio Santiago, who throughout his years of training has earned a 5th degree black belt in Hapkido, a 7th degree blackbelt in Tang Soo Do, and a 2nd degree blackbelt in Brazilian Jui Jitsu.</p>
-            </div>
-        </div>
-        <div id="about_right_middle">
-            <div class="pics">
-                <img src="static/images/about_img/about3.jpg" alt="class photos">
-                <img src="static/images/about_img/about4.jpg" alt="class photos">
-            </div>
-            <div class="pics">
-                <img src="static/images/about_img/about5.jpg" alt="class photos">
-                <img src="static/images/about_img/kids.jpg" alt="class photos">
-            </div>
-        </div>
-    </div>
+    <h2 id="dashboard_h2">All Techniques:</h2>
+    <div id="tech_container">
+        <table class="table table-lg">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">Name</th>
+                    <th scope="col">Belt Level</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+                {% for technique in all_techniques %}
+                <tr class="table-secondary">
+                    <td>{{ technique.name }}</td>
+                    <td>{{ technique.belt_level }}</td>
+                    {% if technique.owner.id == session['user'] %}
+                    <td><a href="/view/technique">View</a></td>
+                    <td><a href="/edit/technique">Edit</a></td>
+                    <td><a href="/delete/technique">Delete</a></td>
+                    {% else %}
+                    <td><a href="/view/technique">View</a></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+        </table>
+        <a href="/dashboard"><button>Back to Dashboard</button></a>
     </div>
     <div id="belt">
         <div id="beg_belt"></div>

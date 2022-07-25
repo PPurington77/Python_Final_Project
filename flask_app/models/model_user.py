@@ -48,7 +48,7 @@ class User:
 
     @classmethod
     def update(cls, data):
-        query = "UPDATE users SET user_name = %(user_name)s, updated_at = NOW() WHERE id = %(id)s;"
+        query = "UPDATE users SET first_name = %(first_name)s, last_name = %(last_name)s, px = %(px)s, email = %(email)s, updated_at = NOW() WHERE id = %(id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
@@ -110,6 +110,41 @@ class User:
         if data['password'] != data['confirm_password']:
             flash('Passwords must match', 'err_user_password')
             print(' Passwords do not match ')
+            is_valid = False
+
+        return is_valid
+
+    @staticmethod
+    def validate_update(data):
+        is_valid = True
+
+        if len(data['first_name']) < 2:
+            flash('First Name does not have the required length', 'err_user_first_name')
+            print('first')
+            is_valid = False
+
+        elif not data['first_name'].isalpha():
+            flash('First Name can only include letters', 'err_user_first_name')
+            print('first lett')
+            is_valid = False
+
+        if len(data['last_name']) < 2:
+            flash('Last Name does not have the required length', 'err_user_last_name')
+            print('last')
+            is_valid = False
+
+        elif not data['last_name'].isalpha():
+            flash('Last Name can only include letters', 'err_user_last_name')
+            print('last lett')
+            is_valid = False
+
+        if len(data['px']) < 9:
+            flash('Phone number must have atleast 9 numbers', 'err_user_px')
+            is_valid = False
+
+        if not EMAIL_REGEX.match(data['email']):
+            flash('Email address is not valid', 'err_user_email')
+            print('email')
             is_valid = False
 
         return is_valid

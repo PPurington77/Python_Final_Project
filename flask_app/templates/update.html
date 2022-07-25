@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keystone MMA</title>
+    <!-- CSS only -->
     <link rel="stylesheet" type="text/css" href="/static/CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -18,9 +20,9 @@
     <div id="header">
         <div id="top_head">
             <img src="/static/images/logo.png" alt="logo">
-            <h1>Keystone Martial Arts Academy</h1>
+            <h1>Welcome, {{ user.first_name }}</h1>
             <div id="head_a">
-                <a href="/login">My Account</a>
+                <a href="/dashboard">My Account</a>
             </div>
         </div>
         <div id="nav">
@@ -35,25 +37,39 @@
         <div id="mid_belt"></div>
         <div id="end_belt"></div>
     </div>
-    <div id="about_middle">
-        <div id="about_left_middle">
-            <img src="/static/images/prof.jpg" alt="prof">
-            <div id="about_p">
-                <p>For over 35 years Keystone MMA has been serving Keystone Heights and its surrounding area. Being one of the only gyms in the area, and the only gym to train both BJJ and MMA Keystone MMA offers a great training environment for any person interested in martial arts.</p>
-                <p>Keystone MMA is led by Master Elpidio Santiago, who throughout his years of training has earned a 5th degree black belt in Hapkido, a 7th degree blackbelt in Tang Soo Do, and a 2nd degree blackbelt in Brazilian Jui Jitsu.</p>
+    <h2 id="dashboard_h2">Update Your Account Information:</h2>
+    <div id="updateBox">
+        <form action="/update" method="post">
+            <div class="lables">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" value="{{ user.first_name }}">
+                {% for message in get_flashed_messages(category_filter=["err_user_first_name"]) %}
+                <p class="alert_alert-danger">{{ message }}</p>
+                {% endfor %}
             </div>
-        </div>
-        <div id="about_right_middle">
-            <div class="pics">
-                <img src="static/images/about_img/about3.jpg" alt="class photos">
-                <img src="static/images/about_img/about4.jpg" alt="class photos">
+            <div class="lables">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" value="{{ user.last_name }}">
+                {% for message in get_flashed_messages(category_filter=["err_user_last_name"]) %}
+                <p class="alert_alert-danger">{{ message }}</p>
+                {% endfor %}
             </div>
-            <div class="pics">
-                <img src="static/images/about_img/about5.jpg" alt="class photos">
-                <img src="static/images/about_img/kids.jpg" alt="class photos">
+            <div class="lables">
+                <label for="px">Phone Number:</label>
+                <input type="text" name="px" value="{{ user.px }}">
+                {% for  message in get_flashed_messages(category_filter=["err_user_px"]) %}
+                <p class="alert_alert-danger">{{ message }}</p>
+                {% endfor %}
             </div>
-        </div>
-    </div>
+            <div class="lables">
+                <label for="email">Email:</label>
+                <input type="text" name="email" value="{{ user.email }}">
+                {% for  message in get_flashed_messages(category_filter=["err_user_email"]) %}
+                <p class="alert_alert-danger">{{ message }}</p>
+                {% endfor %}
+                <button type="submit" id="updateButton">Update</button>
+            </div>
+        </form>
     </div>
     <div id="belt">
         <div id="beg_belt"></div>
