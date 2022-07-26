@@ -25,3 +25,10 @@ def classes():
 def contact():
 
     return render_template('contact.html')
+
+@app.route('/news')
+def news():
+    data = {
+        'id' : session['user']
+    }
+    return render_template('news.html', user = User.get_one(data))

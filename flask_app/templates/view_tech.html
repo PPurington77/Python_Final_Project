@@ -20,7 +20,7 @@
     <div id="header">
         <div id="top_head">
             <img src="/static/images/logo.png" alt="logo">
-            <h1>Welcome, {{ user.first_name }}</h1>
+            <h1>Keystone Mixed Martial Arts</h1>
             <div id="head_a">
                 <a href="/dashboard">My Account</a>
             </div>
@@ -37,39 +37,37 @@
         <div id="mid_belt"></div>
         <div id="end_belt"></div>
     </div>
-    <h2 id="dashboard_h2">Update Your Account Information:</h2>
-    <div id="updateBox">
-        <form action="/update" method="post">
-            <div class="lables">
-                <label for="first_name">First Name:</label>
-                <input type="text" name="first_name" value="{{ user.first_name }}">
-                {% for message in get_flashed_messages(category_filter=["err_user_first_name"]) %}
-                <p class="alert_alert-danger">{{ message }}</p>
-                {% endfor %}
-            </div>
-            <div class="lables">
-                <label for="last_name">Last Name:</label>
-                <input type="text" name="last_name" value="{{ user.last_name }}">
-                {% for message in get_flashed_messages(category_filter=["err_user_last_name"]) %}
-                <p class="alert_alert-danger">{{ message }}</p>
-                {% endfor %}
-            </div>
-            <div class="lables">
-                <label for="px">Phone Number:</label>
-                <input type="text" name="px" value="{{ user.px }}">
-                {% for  message in get_flashed_messages(category_filter=["err_user_px"]) %}
-                <p class="alert_alert-danger">{{ message }}</p>
-                {% endfor %}
-            </div>
-            <div class="lables">
-                <label for="email">Email:</label>
-                <input type="text" name="email" value="{{ user.email }}">
-                {% for  message in get_flashed_messages(category_filter=["err_user_email"]) %}
-                <p class="alert_alert-danger">{{ message }}</p>
-                {% endfor %}
-                <button type="submit" id="updateButton">Update</button>
-            </div>
-        </form>
+    <h2 id="dashboard_h2">All Techniques:</h2>
+    <div id="tech_container">
+        <table class="table table-lg">
+            <tbody>
+                <tr>
+                    <th>Name:</th>
+                    <td>{{ technique.name }}</td>
+                </tr>
+                <tr>
+                    <th>Type:</th>
+                    <td>{{ technique.type }}</td>
+                </tr>
+                <tr>
+                    <th>Belt Level:</th>
+                    <td>{{ technique.belt_level }}</td>
+                </tr>
+                <tr>
+                    <th>Instructions</th>
+                    <td>{{ technique.instructions }}</td>
+                </tr>
+                <tr>
+                    <th>Link:</th>
+                    <td><a href="{{ technique.link }}">{{ technique.link }}</a></td>
+                </tr>
+                <tr>
+                    <th>Posted By:</th>
+                    <td>{{ technique.owner.first_name }} {{ technique.owner.last_name }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/techniques"><button>Back to Techniques</button></a>
     </div>
     <div id="belt">
         <div id="beg_belt"></div>

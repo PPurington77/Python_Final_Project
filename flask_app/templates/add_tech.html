@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keystone MMA</title>
+    <link rel="stylesheet" type="text/css" href="/static/CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="/flask_app/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/flask_app/static/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="header">
+        <div id="top_head">
+            <img src="/static/images/logo.png" alt="logo">
+            <h1>Keystone Martial Arts Academy</h1>
+            <div id="head_a">
+                <a href="/dashboard">My Account</a>
+            </div>
+        </div>
+        <div id="nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/classes">Classes/Schedule</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+    <div id="belt">
+        <div id="beg_belt"></div>
+        <div id="mid_belt"></div>
+        <div id="end_belt"></div>
+    </div>
+    <div id="tech_container_add">
+        <div id="add_box">
+            <h2>Add Technique Here:</h2>
+            <form action="/add/technique" method="post">
+                <div class="lables">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" placeholder="Technique Name Here">
+                    {% for message in get_flashed_messages(category_filter=["err_name"])%}
+                    <p class="alert_alert-danger">{{ message }}</p>
+                    {% endfor %}
+                </div>
+                <div class="lables">
+                    <label for="type">Type:</label>
+                    <input type="text" name="type" placeholder="Type of move here">
+                    {% for message in get_flashed_messages(category_filter=["err_type"])%}
+                    <p class="alert_alert-danger">{{ message }}</p>
+                    {% endfor %}
+                </div>
+                <div class="lables">
+                    <label for="belt_level">Belt Level:</label>
+                    <input type="text" name="belt_level" placeholder="Belt Level">
+                    {% for message in get_flashed_messages(category_filter=["err_belt_level"])%}
+                    <p class="alert_alert-danger">{{ message }}</p>
+                    {% endfor %}
+                </div>
+                <div class="lables">
+                    <label for="link">Link:</label>
+                    <input type="text" name="link" placeholder="If you do not have a link leave blank">
+                </div>
+                <div class="lables">
+                    <label for="instructions">Instructions:</label>
+                    <textarea name="instructions" id="instructions" placeholder="Instructions Here"></textarea>
+                    {% for message in get_flashed_messages(category_filter=["err_instructions"])%}
+                    <p class="alert_alert-danger">{{ message }}</p>
+                    {% endfor %}
+                </div>
+                <input id="buttonLeft" type="submit" value="create">
+            </form>
+        </div>
+    </div>
+    <div id="belt">
+        <div id="beg_belt"></div>
+        <div id="mid_belt"></div>
+        <div id="end_belt"></div>
+    </div>
+    <div id="footer">
+        <div id="left_foot">
+            <p>Keystone MMA</p>
+        </div>
+        <div id="right_foot">
+            <a href="https://www.facebook.com/STTPMMA"><img src="/static/images/facebookicon.png" alt="facebook icon"></a>
+            <a href="mailto:santiagosttpmma@yahoo.com"><img src="/static/images/email.png" alt="email icon"></a>
+        </div>
+    </div>
+</body>
+</html>

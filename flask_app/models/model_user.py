@@ -2,6 +2,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 import re
 from flask import flash
 from flask_app import bcrypt
+from flask_app.models import model_technique
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 PASSWORD_REGEX = re.compile(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$')

@@ -37,39 +37,9 @@
         <div id="mid_belt"></div>
         <div id="end_belt"></div>
     </div>
-    <h2 id="dashboard_h2">Update Your Account Information:</h2>
-    <div id="updateBox">
-        <form action="/update" method="post">
-            <div class="lables">
-                <label for="first_name">First Name:</label>
-                <input type="text" name="first_name" value="{{ user.first_name }}">
-                {% for message in get_flashed_messages(category_filter=["err_user_first_name"]) %}
-                <p class="alert_alert-danger">{{ message }}</p>
-                {% endfor %}
-            </div>
-            <div class="lables">
-                <label for="last_name">Last Name:</label>
-                <input type="text" name="last_name" value="{{ user.last_name }}">
-                {% for message in get_flashed_messages(category_filter=["err_user_last_name"]) %}
-                <p class="alert_alert-danger">{{ message }}</p>
-                {% endfor %}
-            </div>
-            <div class="lables">
-                <label for="px">Phone Number:</label>
-                <input type="text" name="px" value="{{ user.px }}">
-                {% for  message in get_flashed_messages(category_filter=["err_user_px"]) %}
-                <p class="alert_alert-danger">{{ message }}</p>
-                {% endfor %}
-            </div>
-            <div class="lables">
-                <label for="email">Email:</label>
-                <input type="text" name="email" value="{{ user.email }}">
-                {% for  message in get_flashed_messages(category_filter=["err_user_email"]) %}
-                <p class="alert_alert-danger">{{ message }}</p>
-                {% endfor %}
-                <button type="submit" id="updateButton">Update</button>
-            </div>
-        </form>
+    <p id="newsP">Flograppling is a great resource to keep up with the latest and greatest BJJ news, you can check out their website and some of their latest video's here</p>
+    <div id="news_container">
+        <iframe id="flo" src="https://www.flograppling.com/" frameborder="0"></iframe>
     </div>
     <div id="belt">
         <div id="beg_belt"></div>

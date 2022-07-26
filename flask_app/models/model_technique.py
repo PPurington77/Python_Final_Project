@@ -29,7 +29,7 @@ class Technique:
         if results:
             all_techniques = []
             for dict in results:
-                show = cls(dict)
+                technique = cls(dict)
                 user_data = {
                     'id':dict['users.id'],
                     'first_name':dict['first_name'],
@@ -42,16 +42,16 @@ class Technique:
                 }
                 user = model_user.User(user_data)
                 technique.owner = user
-                all_techniques.append(show)
+                all_techniques.append(technique)
             return all_techniques
         return []
 
     @classmethod
-    def get_one_user_from_show(cls, data):
+    def get_one_user_from_technique(cls, data):
         query = "SELECT * FROM techniques JOIN users ON users.id = techniques.user_id WHERE techniques.id = %(id)s"
 
         results = connectToMySQL(DATABASE).query_db(query, data)
-        show = cls(results[0])
+        technique = cls(results[0])
 
         user_data = {
             'id':results[0]['users.id'],
@@ -69,7 +69,7 @@ class Technique:
 
     @classmethod
     def create(cls, data):
-        query = "INSERT INTO techniques (name, intructions, type, belt_level, link, user_id, created_at, updated_at) VALUES (%(name)s, %(instructions)s, %(type)s, %(belt_level)s, %(link)s, %(user_id)s, NOW(), NOW());"
+        query = "INSERT INTO techniques (name, instructions, type, belt_level, link, user_id, created_at, updated_at) VALUES (%(name)s, %(instructions)s, %(type)s, %(belt_level)s, %(link)s, %(user_id)s, NOW(), NOW());"
         
         return connectToMySQL(DATABASE).query_db(query, data)
 
@@ -85,7 +85,7 @@ class Technique:
 
     @classmethod
     def update(cls, data):
-        query = "UPDATE technique SET name = %(name)s, instructions = %(instructions)s, type = %(type)s, belt_level = %(belt_level)s, link = %(link)s, updated_at = Now() WHERE id = %(id)s;"
+        query = "UPDATE techniques SET name = %(name)s, instructions = %(instructions)s, type = %(type)s, belt_level = %(belt_level)s, link = %(link)s, updated_at = Now() WHERE id = %(id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
@@ -98,29 +98,25 @@ class Technique:
         is_valid = True
 
         if len(data['name']) < 2:
-            flash('Enter Name', 'err_title')
+            flash('Enter Name', 'err_name')
             print('name')
             is_valid = False
 
         if len(data['instructions']) < 2:
-            flash('Enter Instructions', 'err_network')
+            flash('Enter Instructions', 'err_instructions')
             print('instructions')
             is_valid = False
 
         if len(data['type']) < 2:
             print('type')
-            flash('Enter move type', 'err_description')
+            flash('Enter move type', 'err_type')
             is_valid = False
 
 
         if not data['belt_level']:
-            flash('Choose belt level', 'err_release_date')
+            flash('Choose belt level', 'err_belt_level')
             print('belt_level')
             is_valid = False
-
-        if len(data['link']) < 2:
-            print('link')
-            flash('Enter a hyperlink or type NONE', 'err_link')
 
         print(is_valid)
         return is_valid

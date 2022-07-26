@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="/flask_app/static/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/flask_app/static/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
 </head>
@@ -46,7 +46,7 @@
             <p>santiagosttpma@yahoo.com</p>
         </div>
         <div id="soc_box">
-            <img src="/static/images/map.png" alt="map">
+            <div id="map"></div>
         </div>
     </div>
     <div id="belt">
@@ -63,7 +63,9 @@
             <a href="mailto:santiagosttpmma@yahoo.com"><img src="/static/images/email.png" alt="email icon"></a>
         </div>
     </div>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="4hL1S62c"></script>
+    <script src="/static/JS/script.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNIGEoMozxAK4_QZeMQfc1vfNzuD4wOgs&callback=initMap">
+    </script>
 </body>
 </html>
