@@ -107,3 +107,20 @@ def delete_tech(id):
     Technique.delete(data)
     print('technique deleted')
     return redirect('/techniques')
+
+#Action
+@app.route('/search', methods=['POST'])
+def search_techniques():
+
+    data = {
+        'name' : request.form['search']
+    }
+    tech_in_db = Technique.get_one_tech_search(data)
+
+    if not tech_in_db:
+        flash('Technique does not exist', 'err_tech_search')
+        return redirect('/techniques')
+
+    tech = tech_in_db.id
+    session['tech'] = tech
+    return redirect('/view/tech')

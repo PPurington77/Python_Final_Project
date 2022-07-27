@@ -84,6 +84,20 @@ class Technique:
         return False
 
     @classmethod
+    def get_one_tech_search(cls, data):
+        query = "SELECT * FROM techniques WHERE name = %(name)s;"
+        result = connectToMySQL(DATABASE).query_db(query, data)
+
+        if result:
+            technique = cls(result[0])
+            return technique
+        print('technique doesnt exist')
+        print('----------------------------------------')
+
+        return False
+
+
+    @classmethod
     def update(cls, data):
         query = "UPDATE techniques SET name = %(name)s, instructions = %(instructions)s, type = %(type)s, belt_level = %(belt_level)s, link = %(link)s, updated_at = Now() WHERE id = %(id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)

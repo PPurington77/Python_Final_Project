@@ -38,6 +38,14 @@
         <div id="end_belt"></div>
     </div>
     <h2 id="dashboard_h2">All Techniques:</h2>
+    <form id ="search" action="/search" method="post">
+        <label for="search">Search:</label>
+        <input type="text" name="search" placeholder="Search for a technique here!">
+        <input id="searchBut" type="submit" value="Search">
+        {% for message in get_flashed_messages(category_filter=["err_tech_search"]) %}
+        <p id="search_alert" class="alert_alert-danger">{{ message }}</p>
+        {% endfor %}
+    </form>
     <div id="tech_container">
         <table class="table table-lg">
             <thead>
