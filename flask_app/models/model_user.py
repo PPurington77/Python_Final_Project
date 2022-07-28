@@ -8,8 +8,8 @@ EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 PASSWORD_REGEX = re.compile(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$')
 CONFIRM_PASSWORD_REGEX = re.compile(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$')
 
-# DATABASE = 'keystonemma_db'  
-DATABASE = 'xteh85kabs9aiddo'  
+DATABASE = 'keystonemma_db'  
+# DATABASE = 'xteh85kabs9aiddo'  
 
 
 class User:

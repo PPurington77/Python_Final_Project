@@ -4,8 +4,8 @@ from flask import flash
 from flask_app import bcrypt
 from flask_app.models import model_user
 
-# DATABASE = 'keystonemma_db'
-DATABASE = 'xteh85kabs9aiddo'  
+DATABASE = 'keystonemma_db'
+# DATABASE = 'xteh85kabs9aiddo'  
 
 class Technique:
     def __init__(self, data):
