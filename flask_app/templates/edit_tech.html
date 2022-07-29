@@ -41,35 +41,35 @@
             <form action="/edit/technique" method="post">
                 <div class="lables">
                     <label for="name">Name:</label>
-                    <input type="text" name="name" placeholder="{{ technique.name }}">
+                    <input type="text" name="name" value="{{ technique.name }}">
                     {% for message in get_flashed_messages(category_filter=["err_name"])%}
                     <p class="alert_alert-danger">{{ message }}</p>
                     {% endfor %}
                 </div>
                 <div class="lables">
                     <label for="type">Type:</label>
-                    <input type="text" name="type" placeholder="{{ technique.type }}">
+                    <input type="text" name="type" value="{{ technique.type }}">
                     {% for message in get_flashed_messages(category_filter=["err_type"])%}
                     <p class="alert_alert-danger">{{ message }}</p>
                     {% endfor %}
                 </div>
                 <div class="lables">
                     <label for="belt_level">Belt Level:</label>
-                    <input type="text" name="belt_level" placeholder="{{ technique.belt_level }}">
+                    <input type="text" name="belt_level" value="{{ technique.belt_level }}">
                     {% for message in get_flashed_messages(category_filter=["err_belt_level"])%}
                     <p class="alert_alert-danger">{{ message }}</p>
                     {% endfor %}
                 </div>
                 <div class="lables">
                     <label for="link">Link:</label>
-                    <input type="text" name="link" placeholder="{{ technique.link }}">
+                    <input type="text" name="link" value="{{ technique.link }}">
                     {% for message in get_flashed_messages(category_filter=["err_link"])%}
                     <p class="alert_alert-danger">{{ message }}</p>
                     {% endfor %}
                 </div>
                 <div class="lables">
                     <label for="instructions">Instructions:</label>
-                    <textarea name="instructions" id="instructions" placeholder="{{ technique.instructions }}"></textarea>
+                    <textarea name="instructions" id="instructions" value="{{ technique.instructions }}"></textarea>
                     {% for message in get_flashed_messages(category_filter=["err_instructions"])%}
                     <p class="alert_alert-danger">{{ message }}</p>
                     {% endfor %}
