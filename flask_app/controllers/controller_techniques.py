@@ -85,10 +85,7 @@ def update_technique():
     is_valid = Technique.validate(request.form)
     if not is_valid:
         print(is_valid, 'not validating technique')
-        data = {
-            'id' : session['tech']
-        }
-        return redirect('/edit/technique<int:id>')
+        return redirect('/edit/tech')
 
     data = {
         **request.form,
