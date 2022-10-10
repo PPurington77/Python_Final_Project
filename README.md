@@ -1,15 +1,10 @@
-# Python Finale
-This project serves as my capstone for the Coding Dojo Python Stack. Utiliing Python, Flask, and MySQL I will be creating a fully functioning website that will also serve as an example on my resume.
-## Day-to-day tracker
-### Day 1
-- create preliminary wireframe
-- create trello workspace for the project
-- create and organize project folders
-- create database in MySQL
+# Python Final Project
+# This repository serves as storage for a project I completed while attending the Coding Dojo bootcamp
+# My project which is named Keystone MMA is a website that I built using Python, Flask, MySQL, HTML, CSS, and Javascript after completing the first programming stack I ever learned
+# The goal was to not only create a website with basic information about the business, but to also create a user experience area that members of the gym can use to chronical and review different techniques learned during BJJ classes. 
+# At completion the project was originally launced on Heroku, however, due to changing policies, it has since been removed
+# Below you will find descriptions of the website and the work that I did to complete it
 
-### Day 2
-- updated database and trello to reflect updated wireframe
-- completed home page
-- completed about page
-- completed schedule/classes page
-- completed contact page
+# Home Page:
+![image](https://user-images.githubusercontent.com/107221772/194883875-eee6de55-bcff-4f75-8d17-131eb7ee3bb0.png)
+
