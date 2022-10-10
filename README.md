@@ -16,3 +16,12 @@
 - Users can manipulate the map using the tools provided by Google
 - I was also able to include a custom map marker
 ![image](https://user-images.githubusercontent.com/107221772/194884930-ea6f50d2-b939-4b47-bcc3-3aa1e0e4aed0.png)
+## My Account
+- Clicking this button will bring you to a page in which you can either register for the website or login
+- Upon completing either task you will be redirected to the members only portion of the website
+- Once logged in session is used to track user activity, and you can go to any portion of the website, then return to the members only area without issue
+- If someone attempts to navigate to a members only area and they are not logged in the will be redirected to the My Account page to login/register
+![image](https://user-images.githubusercontent.com/107221772/194886155-1ecc63be-3892-44ba-a1a8-095a4358ea63.png)
+- When creating an account hashing and bcryt are utilized prior to the users password being stored in the database
+- Validations are also applied to both the register and login boxes
+![image](https://user-images.githubusercontent.com/107221772/194886416-c4a0b699-34a2-4a5b-b55e-01d7bea25be6.png)
