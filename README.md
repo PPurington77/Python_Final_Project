@@ -25,3 +25,4 @@
 - When creating an account hashing and bcryt are utilized prior to the users password being stored in the database
 - Validations are also applied to both the register and login boxes
 ![image](https://user-images.githubusercontent.com/107221772/194886416-c4a0b699-34a2-4a5b-b55e-01d7bea25be6.png)
+![image](https://user-images.githubusercontent.com/107221772/194886538-5cf16cd5-cd3a-494f-bd26-e99193c267c9.png)
