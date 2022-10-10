@@ -23,6 +23,13 @@
 - If someone attempts to navigate to a members only area and they are not logged in the will be redirected to the My Account page to login/register
 ![image](https://user-images.githubusercontent.com/107221772/194886155-1ecc63be-3892-44ba-a1a8-095a4358ea63.png)
 - When creating an account hashing and bcryt are utilized prior to the users password being stored in the database
-- Validations are also applied to both the register and login boxes
+- REGEX is used for both the email and password, ensuring that certain standards are met
 ![image](https://user-images.githubusercontent.com/107221772/194886416-c4a0b699-34a2-4a5b-b55e-01d7bea25be6.png)
 ![image](https://user-images.githubusercontent.com/107221772/194886538-5cf16cd5-cd3a-494f-bd26-e99193c267c9.png)
+- Validations are also applied to both the register and login boxes
+## Dashboard
+- Upon logging in users are brought to there dashboard where they update/delete their account, and add/view techniques in the database
+- Users can also view BJJ news by clicking the button which takes them to a different portion of the website
+- Upon clicking update users are brought to an update page in which they can update their name, phone number, and email in the database
+- Deleting a user removes them from the database and clears session
+![image](https://user-images.githubusercontent.com/107221772/194887400-2e4e5f6f-cf88-47ed-b3dc-6dac5b9f15bc.png)
