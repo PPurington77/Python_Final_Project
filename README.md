@@ -38,6 +38,11 @@
 - There is also a search bar that you can use to find a specific technique
 = Any user can view a technique, but only the user that created a technique can edit or delete it from the database
 ![image](https://user-images.githubusercontent.com/107221772/196205650-fed0c1a6-fb53-4176-9fcd-454b81ae60bd.png)
+## Adding a technique
+- Upon clicking this button you will be brought to a page where you can create your own techniques
+- A technique will consist of mulitple categories, most of which have to be included in order to pass validations
+- You can also include a url to an instructional video
+![image](https://user-images.githubusercontent.com/107221772/196207731-0078e62c-ef87-48d7-b875-03bd545eb656.png)
 ## Viewing a single technique
 - Upon clicking on a specific technique you will be brought to it's page
 - Information on the page include its name, move type, instructions, difficulty level, and a url link if one is included
