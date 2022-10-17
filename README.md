@@ -33,3 +33,27 @@
 - Upon clicking update users are brought to an update page in which they can update their name, phone number, and email in the database
 - Deleting a user removes them from the database and clears session
 ![image](https://user-images.githubusercontent.com/107221772/194887400-2e4e5f6f-cf88-47ed-b3dc-6dac5b9f15bc.png)
+## View Techniques
+- On this page you can view all of the techniques that have been entered into the database
+- There is also a search bar that you can use to find a specific technique
+= Any user can view a technique, but only the user that created a technique can edit or delete it from the database
+![image](https://user-images.githubusercontent.com/107221772/196205650-fed0c1a6-fb53-4176-9fcd-454b81ae60bd.png)
+## Viewing a single technique
+- Upon clicking on a specific technique you will be brought to it's page
+- Information on the page include its name, move type, instructions, difficulty level, and a url link if one is included
+![image](https://user-images.githubusercontent.com/107221772/196206063-c39bc8df-469d-4eb1-b55f-997c8ef20704.png)
+## Editing a technique
+- clicking this button will bring you to a page where you can update your technique
+= validations are included when trying to update
+![image](https://user-images.githubusercontent.com/107221772/196206462-982e3ac4-31dd-48af-a6cf-9361ca0b8e70.png)
+## BJJ News
+- Link directing you to a portion of the website where another website is embedded
+- The website was embedded using an iframe
+![image](https://user-images.githubusercontent.com/107221772/196206721-a3fca9f1-666c-43b2-9368-84ebeb1adc9c.png)
+## Log out
+- After logging in, and while navigating the portion of the website where you have to be logged in a logout button is displayed
+- Clicking this button will log you out and redirect you the homepage
+- If you are navigating anywhere else on the website a 'My Account' button will be displayed instead which brings you back to the dashboard
+
+
+
